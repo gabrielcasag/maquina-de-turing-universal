@@ -1,13 +1,5 @@
 # maquina-de-turing-universal
 
-<<<<<<< HEAD
-# Trabalho realizado para a discplina de Teoria da Computação
-# 
-# Implementação de Maquina de Turing Universal ( MTU ) que executa a partir de um arquivo texto
-# Arquivo texto contem uma representaçao binária de MTU R(M)w
-# 0s representam delimitadores da representaçao 
-# 1s são uma representaçao unaria de cada componente da maquina
-=======
 Trabalho realizado para a discplina de Teoria da Computação , UFLA ;
 
 - Implementação de Maquina de Turing Universal ( MTU ) que executa a partir de um arquivo texto
@@ -28,4 +20,4 @@ Trabalho realizado para a discplina de Teoria da Computação , UFLA ;
   - Fita 2 contém o estado atual da computação
   - Fita 3 contém a palavra __w__
 - Ao final da execução uma mensagem é retornada dizendo se foi possível aceitar ou rejeitar a palavra, podendo entrar em loop infinito. 
->>>>>>> 5fd78573f22d5e878aef88a8ac3b5411e8b7b8c9
+
