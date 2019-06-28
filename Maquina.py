@@ -16,13 +16,8 @@ class Maquina():
 		self.cabesss_maquina = 0
 		self.D = "1"
 		self.E = "11"
-<<<<<<< HEAD
 		self.REJEITA = "\nPalavra rejeitada\n"
 		self.ACEITA = "\nPalavra aceita\n"
-=======
-		self.REJEITA = "\nPalavra rejeitada!!\n"
-		self.ACEITA = "\nPalavra aceita!!\n"
->>>>>>> 5fd78573f22d5e878aef88a8ac3b5411e8b7b8c9
 
 
 	def buscarTransicao(self):
