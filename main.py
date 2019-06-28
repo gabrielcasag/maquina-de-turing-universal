@@ -2,13 +2,25 @@ from Maquina import Maquina
 import sys
 
 #mensagens 
+<<<<<<< HEAD
+valida = "\nRepresentacao MTU valida\n"
+invalida = "\nRepresentacao MTU invalida\n"
+=======
 valida = "\nRepresentacao MTU valida!!!\n"
 invalida = "\nRepresentacao MTU invalida!!!\n"
+>>>>>>> 5fd78573f22d5e878aef88a8ac3b5411e8b7b8c9
 
 
 if __name__ == '__main__':
 
+<<<<<<< HEAD
+	try:
+		arquivo = open( sys.argv[1] , 'r' ) 
+	except:
+		print("Erro ao abrir arquivo")	
+=======
 	arquivo = open( sys.argv[1] , 'r' ) 
+>>>>>>> 5fd78573f22d5e878aef88a8ac3b5411e8b7b8c9
 
 	rMw = arquivo.read() # R(M)w , onde R(m) e a representacao e w a palavra de entrada
 
