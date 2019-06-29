@@ -20,4 +20,4 @@ Trabalho realizado para a discplina de Teoria da Computação , UFLA ;
   - Fita 2 contém o estado atual da computação
   - Fita 3 contém a palavra __w__
 - Ao final da execução uma mensagem é retornada dizendo se foi possível aceitar ou rejeitar a palavra, podendo entrar em loop infinito. 
-
+- Algumas heuristicas foram implementadas com o objetivo de reconhecer possiveis loops infinitos
