@@ -18,6 +18,7 @@ class Maquina():
 		self.E = "11"
 		self.REJEITA = "\nPalavra rejeitada\n"
 		self.ACEITA = "\nPalavra aceita\n"
+		self.ultima_transicao = []
 
 
 	def buscarTransicao(self):
@@ -34,7 +35,8 @@ class Maquina():
 			if transicao.simbolo_entrada == self.fita3[self.cabesss_maquina]:
 				try:
 					self.executarTransicao(transicao)
-					return True
+					self.ultima_transicao = transicao
+					return True, ultima_transicao
 				except ErroMaquina:
 					print(self.REJEITA)
 					exit(0)
@@ -57,13 +59,33 @@ class Maquina():
 	def executarMaquina(self):
 		print("INICIO :")
 		print(self )
+		
 		i = 1
-		while self.buscarTransicao():
-			## HEURISTICA
+		var = self.buscarTransicao()
+		conta_transicao = {}
+
+		while var[0]:
+			## HEURISTICAS
+
+			#se executar muitas vezes o tamanho da palavra pode ser um possivel loop infinito 
+			#nunca encontra uma forma de alcançar um estado de aceitacao
+			#falharia se a maquina for um processo de copiar uma grande quantidade de vezes uma palavra
+			if i > (1000*len(self.fita3)):
+				print(self.REJEITA)
+				print("possivel loop infinito")
+				exit(0)
+
+
+
+
+
+
 			print("Passo " + str(i) )
 			print(self)	
 			i+=1
 			pass
+		
+
 		print(self.ACEITA)
 
 
