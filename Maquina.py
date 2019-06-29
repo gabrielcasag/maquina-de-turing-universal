@@ -15,7 +15,7 @@ class Maquina():
 		self.fita2 = "1" # estado inicial
 		self.fita3 = palavra
 		self.lista_transicoes = [Transicao(tran) for tran in regras]		
-		self.cabesss_maquina = 0
+		self.cabeca_maquina = 0
 		self.D = "1"
 		self.E = "11"
 		self.REJEITA = "\nPalavra rejeitada\n"
@@ -34,7 +34,7 @@ class Maquina():
 			return False, self.ultima_transicao
 		
 		for transicao in transicoes:
-			if transicao.simbolo_entrada == self.fita3[self.cabesss_maquina]:
+			if transicao.simbolo_entrada == self.fita3[self.cabeca_maquina]:
 				try:
 					self.ultima_transicao = transicao
 					self.executarTransicao(transicao)
@@ -50,12 +50,12 @@ class Maquina():
 	def executarTransicao(self, transicao):
 
 		self.fita2 = transicao.estado_destino
-		self.fita3[self.cabesss_maquina] = transicao.simbolo_escrita
+		self.fita3[self.cabeca_maquina] = transicao.simbolo_escrita
 		if transicao.direcao == self.D:
-			self.cabesss_maquina += 1
+			self.cabeca_maquina += 1
 		else:
-			self.cabesss_maquina -= 1
-			if self.cabesss_maquina < 0:
+			self.cabeca_maquina -= 1
+			if self.cabeca_maquina < 0:
 				raise ErroMaquina 
 
 	def executarMaquina(self):
