@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import time
 
 class Maquina():
@@ -29,14 +31,14 @@ class Maquina():
 		
 		#se nao tiver transicoes a lista sera vazia
 		if transicoes == []:
-			return False
+			return False, self.ultima_transicao
 		
 		for transicao in transicoes:
 			if transicao.simbolo_entrada == self.fita3[self.cabesss_maquina]:
 				try:
-					self.executarTransicao(transicao)
 					self.ultima_transicao = transicao
-					return True, ultima_transicao
+					self.executarTransicao(transicao)
+					return True, self.ultima_transicao
 				except ErroMaquina:
 					print(self.REJEITA)
 					exit(0)
@@ -62,9 +64,9 @@ class Maquina():
 		
 		i = 1
 		var = self.buscarTransicao()
-		conta_transicao = {}
-
-		while var[0]:
+		conta_transicao = dict()
+		print(var)
+		while var[0] :
 			## HEURISTICAS
 
 			#se executar muitas vezes o tamanho da palavra pode ser um possivel loop infinito 
@@ -76,13 +78,27 @@ class Maquina():
 				exit(0)
 
 
+			
+			#se executar muitas vezes na mesma transiçao pode ser um possivel loop infinito
+			#falharia no caso de ser uma maquina que reconhece ab^i com uma quantidade muito grande de b's
+			try:
+				conta_transicao[var[1]] +=1
+			except KeyError:
+				conta_transicao[var[1]] = 0
 
+			maior_ocorrencia = max( conta_transicao , key = conta_transicao.get )
 
-
+			if conta_transicao[maior_ocorrencia] == var[1] and maior_ocorrencia > (1000*len(self.fita3)):
+				print(self.REJEITA)
+				print("possivel loop infinito")
+				exit(0)
 
 			print("Passo " + str(i) )
 			print(self)	
 			i+=1
+
+			var = self.buscarTransicao() #buscando proxima transicao
+			
 			pass
 		
 
