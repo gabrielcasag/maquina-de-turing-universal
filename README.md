@@ -1,6 +1,6 @@
 # maquina-de-turing-universal
 
-Trabalho realizado para a discplina de Teoria da Computação , UFLA ;
+Projeto prático realizado para a discplina de Teoria da Computação , UFLA ;
 
 - Implementação de Maquina de Turing Universal ( MTU ) que executa a partir de um arquivo texto
 - Sua chamada se da por linha de comando, seguindo o padrão a seguir:
